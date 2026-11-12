@@ -1,5 +1,7 @@
 import argparse
 import os
+import string
+import pickle
 from nltk.stem import PorterStemmer
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 DATA_PATH = os.path.join(PROJECT_ROOT, "data", "movies.json")
@@ -24,6 +26,22 @@ def main() -> None:
     print(os.path.dirname(__file__))
     print(PROJECT_ROOT)
     print(DATA_PATH)
+
+
+    print("cat" in "concatinate")
+
+    print(string.punctuation)
+    print(str.maketrans("ab", "xy", "?!"))
+
+    index = {"alien": {1, 4, 7}, "space": {1, 9}} # a dict of sets
+
+    with open("index.pkl", "wb") as f: # "wb" = write binary
+        pickle.dump(index, f)
+
+    with open("index.pkl", "rb") as f: # "rb" = read binary
+        loaded = pickle.load(f)
+
+    print(loaded == index)      # True: same dict, same sets 
 
 
 
