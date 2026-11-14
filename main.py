@@ -48,6 +48,8 @@ def main() -> None:
     print(counter)
     print(counter[4])
 
+    
+
 
 
 if __name__ == "__main__":
