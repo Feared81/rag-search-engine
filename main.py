@@ -3,6 +3,7 @@ import os
 import string
 import pickle
 from nltk.stem import PorterStemmer
+from collections import Counter
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 DATA_PATH = os.path.join(PROJECT_ROOT, "data", "movies.json")
 
@@ -42,6 +43,10 @@ def main() -> None:
         loaded = pickle.load(f)
 
     print(loaded == index)      # True: same dict, same sets 
+
+    counter = Counter([2, 3, 4, 4])
+    print(counter)
+    print(counter[4])
 
 
 
